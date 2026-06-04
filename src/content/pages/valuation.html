@@ -1,0 +1,161 @@
+---
+description: "Get a complimentary, human verified home valuation from Irina Stoyan Real Estate. Discover the true market value of your Washington State property today."
+image: "/assets/images/irina1.webp"
+eleventyComputed:
+  title: "Home Valuation | Irina Stoyan Real Estate | Washington"
+  permalink: "/valuation/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    
+    <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
+
+    <!-- Any page-specific tags that belong in the <head> -->
+
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--             Home Valuation Form              -->
+<!-- ============================================ -->
+
+<!-- Adjust the 6rem value up or down until it clears the header perfectly -->
+<section id="valuation-calculator" style="padding-top: 6rem;">
+    <div class="cs-container">
+        <div class="cs-card">
+            
+            <!-- Left Side: Image & Content -->
+            <div class="cs-image-panel">
+                <picture class="cs-background">
+                    <!-- Swap this with a nice interior staircase or living room shot -->
+                    <img src="/assets/images/cabinets.jpg" alt="Luxury home interior" loading="lazy" decoding="async">
+                    <div class="cs-overlay"></div>
+                </picture>
+                <div class="cs-text-wrapper">
+                    <h2 class="cs-title">Precision Pricing</h2>
+                    <p class="cs-text">
+                        Automated tools can't see your home's unique features. We provide a human verified valuation based on real time market data.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Side: Multi-Step Form -->
+            <div class="cs-form-panel">
+                <div class="cs-form-header">
+                    <h2 class="cs-form-title">Home Valuation</h2>
+                    <p class="cs-form-subtitle">Enter your details below for a complimentary analysis.</p>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="cs-progress-bar">
+                    <div class="cs-step-indicator active"></div>
+                    <div class="cs-step-indicator"></div>
+                    <div class="cs-step-indicator"></div>
+                </div>
+
+                <!-- The Form -->
+                <form id="cs-valuation-form" name="Home Valuation" method="POST" data-netlify="true">
+                    
+                    <!-- STEP 1 -->
+                    <div class="cs-form-step active" data-step="1">
+                        <input class="cs-input" type="text" name="Address" placeholder="PROPERTY ADDRESS" required>
+                        <div class="cs-button-row right">
+                            <button type="button" class="cs-button-solid next-btn">NEXT STEP &rarr;</button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2 -->
+                    <div class="cs-form-step" data-step="2">
+                        <input class="cs-input" type="text" name="Condition" placeholder="PROPERTY CONDITION (E.G. UPDATED, NEEDS WORK)">
+                        <input class="cs-input" type="text" name="Timeline" placeholder="SELLING TIMELINE (E.G. ASAP, 3-6 MONTHS)">
+                        <div class="cs-button-row split">
+                            <button type="button" class="cs-button-outline back-btn">&larr; BACK</button>
+                            <button type="button" class="cs-button-solid next-btn">NEXT STEP &rarr;</button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3 -->
+                    <div class="cs-form-step" data-step="3">
+                        <input class="cs-input" type="text" name="Full Name" placeholder="FULL NAME" required>
+                        <input class="cs-input" type="email" name="Email" placeholder="EMAIL ADDRESS" required>
+                        <input class="cs-input" type="tel" name="Phone" placeholder="PHONE NUMBER" required>
+                        
+                        <label class="cs-checkbox-wrapper">
+                            <input type="checkbox" name="Consent" required>
+                            <span class="cs-checkmark"></span>
+                            <span class="cs-terms">
+                                I agree to be contacted by Irina Stoyan Realty via call, email, and text. To opt-out, you can reply 'stop' at any time or click the unsubscribe link in the emails. Message and data rates may apply. <a href="/privacy/">Privacy Policy</a>.
+                            </span>
+                        </label>
+                        
+                        <div class="cs-button-row split">
+                            <button type="button" class="cs-button-outline back-btn">&larr; BACK</button>
+                            <button type="submit" class="cs-button-solid submit-btn">GET MY ESTIMATE</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const steps = Array.from(document.querySelectorAll(".cs-form-step"));
+        const indicators = Array.from(document.querySelectorAll(".cs-step-indicator"));
+        const nextBtns = document.querySelectorAll(".next-btn");
+        const backBtns = document.querySelectorAll(".back-btn");
+        let currentStep = 0;
+
+        function updateForm() {
+            // Hide all steps and remove active classes
+            steps.forEach((step, index) => {
+                step.classList.remove("active");
+                indicators[index].classList.remove("active");
+            });
+
+            // Show current step and fill progress bar up to this step
+            steps[currentStep].classList.add("active");
+            for(let i = 0; i <= currentStep; i++) {
+                indicators[i].classList.add("active");
+            }
+        }
+
+        nextBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                // Optional: You can add basic HTML5 validation checks here before advancing
+                const inputs = steps[currentStep].querySelectorAll("input[required]");
+                let allValid = true;
+                inputs.forEach(input => {
+                    if (!input.checkValidity()) {
+                        input.reportValidity();
+                        allValid = false;
+                    }
+                });
+
+                if (allValid && currentStep < steps.length - 1) {
+                    currentStep++;
+                    updateForm();
+                }
+            });
+        });
+
+        backBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                if (currentStep > 0) {
+                    currentStep--;
+                    updateForm();
+                }
+            });
+        });
+    });
+</script>
+    { {% include 'sections/cta.html' %} }
+{% endblock %}
+
+
+
+

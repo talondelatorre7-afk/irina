@@ -35,31 +35,62 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 
     <section id="hero-143">
         <div class="cs-container">
-            <span class="cs-topper">CodeStitch Presents</span>
+            <span class="cs-topper">Irina Stoyan Real Estate</span>
             <h1 class="cs-title">
-                The Intermediate Website Kit (LESS)
+                Find Your Sanctuary
             </h1>
             <p class="cs-text">
-                Building faster websites, faster. Just clone, update _data/client.js, swap out some sections, and away you go!
+                Access exclusive off market properties and premier listings in Washington State.
             </p>
-            <a href="/contact/" class="cs-button-solid">Get in Touch</a>
+
+            <!-- Custom Zillow Badge -->
+            <div class="cs-zillow-badge">
+                <div class="cs-zillow-image-wrapper">
+                    <!-- Updated to irina1.webp -->
+                    <img alt="Irina Stoyan" class="cs-zillow-img" src="/assets/images/irina1.webp" loading="eager" decoding="async">
+                </div>
+                <div class="cs-zillow-content">
+                    <div class="cs-zillow-row-top">
+                        <!-- Updated to zillowb.png -->
+                        <img alt="Zillow" class="cs-zillow-logo" src="/assets/images/zillowb.png" loading="eager" decoding="async">
+                        <div class="cs-stars">
+                            <svg class="cs-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                            <svg class="cs-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                            <svg class="cs-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                            <svg class="cs-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                            <svg class="cs-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        </div>
+                    </div>
+                    <div class="cs-zillow-row-bottom">
+                        <span class="cs-premier">Premier Agent</span>
+                        <span class="cs-dot"></span>
+                        <span class="cs-top">Top 5% Realtor</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Action Buttons -->
+            <div class="cs-button-group">
+                <a href="/listings/" class="cs-button-solid">View Listings</a>
+                <a href="/valuation/" class="cs-button-transparent">Get Your Home Valuation</a>
+                <a href="tel:+12532444350" class="cs-phone">
+                    <img src="/assets/svgs/phone.svg" alt="phone icon" width="20" height="20">
+                    (253) 244-4350
+                </a>
+            </div>
         </div>
 
         <!-- Background Image -->
         <picture class="cs-background">
-            <!--Mobile Image-->
             <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 640, height: 1490 }) | avif %}" type="image/avif">
             <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 640, height: 1490 }) | webp %}" type="image/webp">
             <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 640, height: 1490 }) | jpeg %}" type="image/jpeg">
-            <!--Tablet Image-->
             <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | avif %}" type="image/avif">
             <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | webp %}" type="image/webp">
             <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | jpeg %}" type="image/jpeg">
-            <!--Large Tablet Image-->
             <source media="(min-width: 1024px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | avif %}" type="image/avif">
             <source media="(min-width: 1024px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | webp %}" type="image/webp">
             <source media="(min-width: 1024px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | jpeg %}" type="image/jpeg">
-            <!--Desktop Image-->
             <source media="(min-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 1, height: 1 }) | avif %}" type="image/avif">
             <source media="(min-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 1, height: 1 }) | webp %}" type="image/webp">
             <source media="(min-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 1, height: 1 }) | jpeg %}" type="image/jpeg">
@@ -429,11 +460,11 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                 <li class="cs-item">
                     <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/profile.svg" alt="profile picture" width="80" height="80">
                     <p class="cs-item-text">
-                        Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa urna, volutpat orci imperdiet eget eget. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, debitis!
+                        We had an incredible experience working with Irina. First of all, she found exactly the house we needed. From start to finish, everything was handled with the highest level of professionalism. She made the entire process of finding and buying our home fast, smooth, and completely stress-free. She took all the extra steps that we needed to complete the process fast and professionally. Communication between us and all sides of the deal was very fast and clear, guidance was excellent, and every detail was taken care of. We truly felt supported every step of the way and couldn’t be happier with our new home. Highly recommend!
                     </p>
                     <div class="cs-info">
                         <div class="cs-flex-group">
-                            <span class="cs-name">Jon Doe</span>
+                            <span class="cs-name">Lyudmyla A</span>
                             <span class="cs-desc">Homeowner</span>
                         </div>
                         <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="96" height="16">
@@ -443,11 +474,11 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                 <li class="cs-item">
                     <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/profile.svg" alt="profile picture" width="80" height="80">
                     <p class="cs-item-text">
-                        Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa urna, volutpat orci imperdiet eget eget.
+                        Irina is an excellent and incredibly knowledgeable realtor! Her top-tier communication and negotiation skills truly set her apart. If you want a dedicated professional who goes above and beyond, I highly recommend Irina. Thank you for the outstanding service!
                     </p>
                     <div class="cs-info">
                         <div class="cs-flex-group">
-                            <span class="cs-name">Jon Doe</span>
+                            <span class="cs-name">Nat</span>
                             <span class="cs-desc">Homeowner</span>
                         </div>
                         <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="96" height="16">

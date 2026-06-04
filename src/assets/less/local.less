@@ -157,51 +157,7 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #RPsbs-313,
-        #RPsbsr-313 {
-            .cs-image-group {
-                &:before,
-                &:after {
-                    background: var(--accent);
-                }
-            }
 
-            .cs-picture2 {
-                background-color: var(--dark);
-                /* 6px - 12px */
-                border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
-            }
-
-            .cs-topper {
-                color: var(--primaryLight);
-            }
-
-            .cs-title,
-            .cs-text,
-            .cs-h3,
-            .cs-quote-text,
-            .cs-name {
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-quote {
-                background-color: var(--accent);
-            }
-
-            .cs-job {
-                color: var(--bodyTextColorWhite);
-                opacity: 0.8;
-            }
-
-            .cs-quote-icon {
-                opacity: 0.2;
-            }
-        }
-    }
-}
 
 /*-- -------------------------- -->
 <---    Side By Side Reverse    -->
@@ -237,14 +193,7 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #RPsbsr-313 {
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-    }
-}
+
 
 /*-- -------------------------- -->
 <---          Gallery           -->
@@ -366,16 +315,7 @@
     }
 }
 
-/* Dark mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #gallery-48 {
-            .cs-title {
-                color: var(--bodyTextColorWhite);
-            }
-        }
-    }
-}
+
 
 /*-- -------------------------- -->
 <---          Reviews           -->
@@ -546,25 +486,156 @@
         }
     }
 }
+#hero-143 {
+    /* (Leave all the existing CodeStitch hero styles up here untouched) */
 
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #reviews-67 {
-            .cs-title,
-            .cs-text,
-            .cs-item-text,
-            .cs-name {
-                color: var(--bodyTextColorWhite);
+    /* Custom Zillow Badge Styles - Nested to enforce specificity */
+    .cs-zillow-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        padding: 0.5rem 1rem 0.5rem 0.5rem;
+        border-radius: 50px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        margin: 0 auto 2rem auto; /* Centers the badge under the centered text */
+        
+        .cs-zillow-image-wrapper {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #fff;
+            flex-shrink: 0;
+            /* Forces image containment */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .cs-zillow-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top;
+                max-width: none; /* Prevents global framework max-widths from breaking it */
+            }
+        }
+
+        .cs-zillow-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .cs-zillow-row-top {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.25rem;
+
+            .cs-zillow-logo {
+                height: 1rem;
+                object-fit: contain;
             }
 
-            .cs-item {
-                background: rgba(0, 0, 0, 0.2);
+            .cs-stars {
+                display: flex;
+                gap: 0.125rem;
+
+                .cs-star {
+                    width: 0.75rem;
+                    height: 0.75rem;
+                    fill: #006AFF; 
+                }
+            }
+        }
+
+        .cs-zillow-row-bottom {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            .cs-premier {
+                font-size: 0.625rem;
+                font-weight: 700;
+                color: #006AFF;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
             }
 
-            .cs-desc {
-                color: var(--primaryLight);
+            .cs-dot {
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background-color: #d1d5db;
+            }
+
+            .cs-top {
+                font-size: 0.625rem;
+                font-weight: 500;
+                color: #4b5563;
+            }
+        }
+    }
+
+    /* Action Buttons Area */
+    .cs-button-group {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Centers the buttons to match the text */
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+
+        .cs-button-solid {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: var(--primaryLight);
+            }
+        }
+
+        .cs-button-transparent {
+            background-color: transparent;
+            color: var(--bodyTextColorWhite); /* Ensuring readability over background */
+            padding: 1rem 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            border: 1px solid var(--bodyTextColorWhite);
+            transition: background-color 0.3s, color 0.3s;
+
+            &:hover {
+                background-color: var(--bodyTextColorWhite);
+                color: var(--headerColor);
+            }
+        }
+
+        .cs-phone {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--bodyTextColorWhite);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            
+            /* If the SVG is dark, invert it to white for the dark hero background */
+            img {
+                filter: brightness(0) invert(1);
             }
         }
     }
 }
+
