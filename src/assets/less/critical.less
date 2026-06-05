@@ -16,47 +16,16 @@
         text-align: center;
         /* 144px - 300px - leaving extra space for the navigation */
         padding: clamp(9rem, 25.95vw, 18.75rem) (16/16rem) 0;
-        /* 130px - 450px */
-        padding-bottom: clamp(12.125rem, 30.95vw, 28.125rem);
+        
+        /* UPDATED: Standard bottom padding so there is no massive gap */
+        padding-bottom: clamp(6.25rem, 10vw, 9.375rem); 
+        
         position: relative;
         z-index: 1;
-        /* Prevents white rectangle pseudos from overlapping the sections below */
+        /* Prevents elements from overlapping the sections below */
         overflow: hidden;
 
-        &:before {
-            /* Left side of the triangle */
-            content: "";
-            width: (500/16rem);
-            /* make really long so it covers the whole screen all the way to desktop */
-            height: (4000/16rem);
-            background: #fff;
-            opacity: 1;
-            transform: rotate(-67deg);
-            transform-origin: center;
-            position: absolute;
-            display: block;
-            bottom: (-2235/16rem);
-            /* this makes the right edge sit at the 50% line at all times */
-            right: 50%;
-            z-index: 0;
-        }
-
-        &:after {
-            /* Right side of the triangle */
-            content: "";
-            width: (500/16rem);
-            height: (4000/16rem);
-            background: #fff;
-            opacity: 1;
-            transform: rotate(67deg);
-            transform-origin: center;
-            position: absolute;
-            display: block;
-            bottom: (-2235/16rem);
-            /* this makes the left edge sit at the 50% line at all times */
-            left: 50%;
-            z-index: 0;
-        }
+        /* DELETED the &:before and &:after blocks that created the slants */
 
         .cs-background {
             width: 100%;
@@ -66,6 +35,7 @@
             top: 0;
             left: 0;
             z-index: -2;
+            /* ... rest of the .cs-background code stays exactly the same ... */
 
             &:before {
                 /* Overlay */
