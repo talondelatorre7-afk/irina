@@ -926,7 +926,52 @@ color: var(--bodyTextColor);
 /*-- -------------------------- -->
 <---          Banner            -->
 <--- -------------------------- -*/
+/* Dark Banner (Global) */
+#banner-minimal {
+    /* Default padding is 150px top, 100px bottom */
+    padding: (150/16rem) (16/16rem) (100/16rem);
+    background-color: #111111;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
+    .cs-int-topper {
+        font-size: (12/16rem);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #d4b87c;
+        display: block;
+        margin-bottom: (16/16rem);
+    }
+
+    .cs-int-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-family: 'Playfair Display', serif;
+        font-weight: 400;
+        color: #ffffff;
+        margin: 0 0 (16/16rem) 0;
+    }
+
+    .cs-int-text {
+        font-size: (16/16rem);
+        line-height: 1.5;
+        color: #a3a3a3;
+        max-width: (600/16rem);
+        margin: 0;
+    }
+}
+/* Banner Utility Classes */
+#banner-minimal.cs-banner-short {
+    padding-top: (120/16rem) !important;
+    padding-bottom: (50/16rem) !important;
+}
+
+#banner-minimal.cs-banner-tall {
+    padding-top: (200/16rem) !important;
+    padding-bottom: (150/16rem) !important;
+}
 /* Mobile - 360px */
 @media only screen and (min-width: 0px) {
 	#banner-310 {
@@ -1317,13 +1362,13 @@ color: var(--bodyTextColor);
         .cs-copyright, .cs-agency-link {
             font-family: var(--bodyFont);
             font-size: (14/16rem);
-            color: #A3A3A3;
+            color: #a3a3a3;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .cs-agency-link:hover {
-            color: #FFFFFF;
+            color: #0044ff;
         }
     }
 }
