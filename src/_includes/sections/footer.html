@@ -4,13 +4,12 @@
 
 <footer id="cs-footer-275">
     <div class="cs-container">
-        <!-- Logo Group -->
         <div class="cs-logo-group">
             <a aria-label="go back to home" class="cs-logo" href="/">
-                <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/logo3.png" alt="logo" width="240" height="32">
+                <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/logo3.png" alt="Irina Stoyan Logo" width="240" height="32">
             </a>
             <p class="cs-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi elementum tincidunt vitae velit dolor cras tellus nisl habitant. Consectetur pellentesque dignissim sed amet.
+                Elevating the Washington real estate experience. Specializing in premier properties, off-market acquisitions, and strategic home sales.
             </p>
             <div class="cs-social">
                 <a class="cs-social-link" aria-label="visit google profile" href="{{ client.address.mapLink }}" target="_blank" rel="noopener">
@@ -24,22 +23,21 @@
                 </a>
             </div>
         </div>
-        <!-- Links -->
         <ul class="cs-nav">
             <li class="cs-nav-li">
-                <span class="cs-header">Sitemap</span>
+                <span class="cs-header">Navigation</span>
             </li>
             <li class="cs-nav-li">
                 <a class="cs-nav-link" href="/">Home</a>
             </li>
             <li class="cs-nav-li">
-                <a class="cs-nav-link" href="/about/">About</a>
+                <a class="cs-nav-link" href="/about/">Meet Irina</a>
             </li>
             <li class="cs-nav-li">
-                <a class="cs-nav-link" href="/reviews/">Reviews</a>
+                <a class="cs-nav-link" href="/listings/">Active Listings</a>
             </li>
             <li class="cs-nav-li">
-                <a class="cs-nav-link" href="/blog/">Blog</a>
+                <a class="cs-nav-link" href="/valuation/">Home Valuation</a>
             </li>
             <li class="cs-nav-li">
                 <a class="cs-nav-link" href="/contact/">Contact</a>
@@ -47,25 +45,27 @@
         </ul>
         <ul class="cs-nav">
             <li class="cs-nav-li">
-                <span class="cs-header">Projects</span>
+                <span class="cs-header">Services</span>
             </li>
             <li class="cs-nav-li">
-                <a class="cs-nav-link" href="/project-one/">Project One</a>
+                <a class="cs-nav-link" href="/buyers/">For Buyers</a>
             </li>
             <li class="cs-nav-li">
-                <a class="cs-nav-link" href="/project-two/">Project Two</a>
+                <a class="cs-nav-link" href="/sellers/">For Sellers</a>
+            </li>
+            <li class="cs-nav-li">
+                <a class="cs-nav-link" href="/off-market/">Off-Market Network</a>
             </li>
         </ul>
-        <!-- Contact Info -->
         <ul class="cs-contact">
             <li class="cs-nav-li">
                 <span class="cs-header">Contact</span>
             </li>
             <li class="cs-contact-li">
                 <a class="cs-contact-link cs-address" href="{{ client.address.mapLink }}" target="_blank" rel="noopener">
-                    {{ client.address.lineOne }}, <br>
-                    {{ client.address.city }}, {{ client.address.state }}
-                    {{ client.address.zip }}
+                    {{ client.address.lineOne }}<br>
+                    {% if client.address.lineTwo %}{{ client.address.lineTwo }}<br>{% endif %}
+                    {{ client.address.city }}, {{ client.address.state }} {{ client.address.zip }}
                 </a>
             </li>
             <li class="cs-contact-li">
@@ -75,5 +75,12 @@
                 <a class="cs-contact-link" href="mailto:{{ client.email }}">{{ client.email }}</a>
             </li>
         </ul>
+    </div>
+    
+    <div class="cs-bottom">
+        <span class="cs-copyright">
+            © {% year %} Irina Stoyan Real Estate. All Rights Reserved. Equal Housing Opportunity.
+        </span>
+        <a href="https://deepseadigital.online" class="cs-agency-link" target="_blank" rel="noopener">Hand-coded by Deep Sea Digital</a>
     </div>
 </footer>
