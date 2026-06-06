@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "morenos-detailing",
+  "name": "irina",
   "compatibility_date": "2026-05-21",
   "assets": {
     "directory": "./public"
